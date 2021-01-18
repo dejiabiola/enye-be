@@ -23,7 +23,8 @@ app.get('/api/rates', (req, res) => {
   if (!req.query.currency) {
     return res.status(400).send('<p>Hey you didn\'t input the currency value, please enter it and try again</p>')
   }
-  //
+  //end of error returns
+
   const base = req.query.base
   const currency = req.query.currency
   const currArray = currency.split(',')
