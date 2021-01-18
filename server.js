@@ -2,9 +2,13 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
+const dotenv = require('dotenv')
 
+
+dotenv.config()
 const app = express()
 app.use(cors())
+
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -55,5 +59,6 @@ app.get('/api/rates', (req, res) => {
 
 })
 
+const port = process.env.PORT || 3000
 
-app.listen(3000, () => console.log('enye express app listening on port 3000!'))
+app.listen(port, () => console.log('enye express app listening on port 3000!'))
