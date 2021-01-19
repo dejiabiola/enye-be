@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello Enye!'))
+app.get('/', (req, res) => res.send(
+  '<div><h1>Hello Enye</h1><p>Please enter the test endpoint to see that it works 😁</p></div>')
+)
 
 
 app.get('/api/rates', (req, res) => {
@@ -56,7 +58,6 @@ app.get('/api/rates', (req, res) => {
     console.log(err)
     return res.status(400).json('The base currency does not exist, please check and try again')
   })
-
 })
 
 const port = process.env.PORT || 3000
